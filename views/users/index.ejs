@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of users</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>People in the app</h1>
+    <% if (people.length > 0) { %>
+        <ul>
+            <% people.forEach((person)=>{ %>
+            <a href="/people/show/<%= person._id %>">
+            <li><%= person.username %></li>
+            </a>
+        <% }) %>
+        </ul>
+    <% } else { %>
+        <h3>There are no items in this Pantry</h3>
+    <% } %>
+  </body>
+</html>
